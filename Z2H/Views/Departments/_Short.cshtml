@@ -1,0 +1,15 @@
+﻿@model Z2H.Models.Department
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Location.StreetAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.DepartmentName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.DepartmentId }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.DepartmentId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.DepartmentId })
+    </td>
+</tr>
