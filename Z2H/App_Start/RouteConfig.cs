@@ -12,7 +12,10 @@ namespace Z2H
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            // Home/Index/param
+            // Search/name
+            routes.MapRoute("EmployeeSearch", "Search/{name}"
+                , defaults: new { controller = "Employees", action = "Search", name = UrlParameter.Optional });
+            // Home/Index/id
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

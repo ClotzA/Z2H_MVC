@@ -21,6 +21,15 @@ namespace Z2H.Controllers
             return View(employees.ToList());
         }
 
+        // GET: Employees/Search/name
+        public ActionResult Search(string name)
+        {
+            var employees = db.Employees.Include(e => e.Department).Include(e => e.Employee2).Include(e => e.Job)
+                .Where(e => e.FirstName.StartsWith(name) || e.LastName.StartsWith(name));
+            return View("Index", employees.ToList());
+        }
+
+
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {

@@ -16,6 +16,7 @@ namespace Z2H.Models
         }
 
         [StringLength(10)]
+        [Required]
         public string JobId { get; set; }
 
         [Required]
